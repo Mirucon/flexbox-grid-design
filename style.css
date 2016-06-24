@@ -1,0 +1,85 @@
+@charset "UTF-8";
+/*
+ 配布元: ミルログ - Flexboxを使ってグリッドレイアウトなWordPressトップページを作る【レスポンシブ対応】
+ https://www.mirucon.com/2016/06/22/flexbox-grid-design/
+ 最終更新: 2016-06-24
+
+*/
+#main {
+ display: -webkit-box;
+ display: -webkit-flex;
+ display: -ms-flexbox;
+ display: flex;
+ -webkit-flex-flow: row wrap;
+ -ms-flex-flow: row wrap;
+ flex-flow: row wrap;
+ background: #f0f0f0;
+}
+
+.archive-grid {
+ width: calc(100% / 3);
+}
+
+@media screen and (max-width: 580px) {
+ .archive-grid {
+ width: calc(100% / 2);
+ }
+}
+.post-inner {
+ position: relative;
+ margin: 5px;
+ padding: 10px;
+ background: #fff;
+ box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.post-thumbnail {
+ position: relative;
+}
+
+.post-thumbnail img {
+ width: 100%;
+ height: 100%;
+}
+
+.post-date {
+ position: absolute;
+ top: 0;
+ left: -15px;
+ padding: 4px 8px;
+ background: #3b8dbd;
+ color: #fff;
+ font-family: Lato, Arial, sans-serif;
+ line-height: normal;
+ box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.post-date::before {
+ content: '';
+ position: absolute;
+ top: calc(50% + 4px);
+ left: -10px;
+ z-index: -1;
+ border: 10px solid transparent;
+ border-right-color: #3b8dbd;
+}
+
+.post-title {
+ font-size: 18px;
+ line-height: 1.4;
+}
+
+.post-title a {
+ text-decoration: none;
+ color: #111;
+ -webkit-transition: all .2s;
+ transition: all .2s;
+}
+
+.post-title a:visited {
+ color: #111;
+}
+
+.post-title a:hover, .post-title a:focus, .post-title a:active {
+ color: #3b8dbd;
+}
