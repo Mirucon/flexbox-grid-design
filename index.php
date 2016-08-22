@@ -1,6 +1,6 @@
 <div id="main" class="main-index">
 
- <?php if ( have_posts() ) : query_posts('posts_per_page=12');?>
+ <?php if ( have_posts() ) : ?>
   <?php while (have_posts()) : the_post(); ?>
    <article id="post-<?php the_ID(); ?>" <?php post_class('archive-grid'); ?>>
     <div class="post-inner post-hover">
